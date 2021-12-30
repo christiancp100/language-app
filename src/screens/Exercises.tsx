@@ -22,7 +22,7 @@ const Exercises = () => {
   const reset = () => setCurrentExercise(0)
 
   if (loading) {
-    return <Loading />
+    return <View style={styles.loadingContainer}><Loading /></View>
   }
 
   return (
@@ -74,6 +74,11 @@ const styles = StyleSheet.create({
   exerciseContainer: {
     height: "70%",
     marginBottom: "10%"
+  },
+  loadingContainer: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center"
   }
 })
 
