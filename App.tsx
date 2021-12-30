@@ -1,21 +1,29 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NativeBaseProvider, Text, View } from 'native-base';
+import { SafeAreaView, StyleSheet } from 'react-native';
+import theme from './theme';
+import "./src/config/firebase"
+import Exercises from './src/screens/Exercises';
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <NativeBaseProvider>
       <StatusBar style="auto" />
-    </View>
+      <SafeAreaView style={styles.layout}>
+        <Exercises />
+      </SafeAreaView>
+
+    </NativeBaseProvider >
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  layout: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    backgroundColor: theme.colors.primary,
+    alignItems: "center"
+  }
+})
+

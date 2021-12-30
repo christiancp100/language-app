@@ -1,13 +1,23 @@
-import {
-  FIREBASE_API_KEY,
-  FIREBASE_AUTH_DOMAIN,
-  FIREBASE_DATABASE_URL
-} from 'react-native-dotenv'
+import { initializeApp } from 'firebase/app';
+import { getFirestore, initializeFirestore } from 'firebase/firestore';
 
-const firebase = Object.freeze({
-  apiKey: FIREBASE_API_KEY,
-  authDomain: FIREBASE_AUTH_DOMAIN,
-  databaseURL: FIREBASE_DATABASE_URL
+const firebaseConfig = Object.freeze({
+  apiKey: "AIzaSyAIwYjjp67PfxJYBwnWDfouWeoVBkcLoxI",
+  authDomain: "plenary-chalice-257507.firebaseapp.com",
+  databaseURL: "https://plenary-chalice-257507-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "plenary-chalice-257507"
 })
 
-export default firebase
+
+
+const app = initializeApp(firebaseConfig);
+
+export const db = getFirestore(app);
+
+export default app;
+
+
+
+
+
+
